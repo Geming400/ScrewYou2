@@ -297,7 +297,7 @@ bool getReturnValue() {
 };
 
 #define SCREWYOU2_HOOK(className, ...) \\
-class $modify(Screwd##className, ##className) { \\
+class $modify(Screwd##className, className) { \\
     bool init(__VA_ARGS__) // `SCREWYOU2_HOOK_INIT()` macro goes here
 
 #define SCREWYOU2_HOOK_INIT(className, ...) { \\
