@@ -65,8 +65,8 @@ SCREWYOU2_HOOK(AudioAssetsBrowser, gd::vector<int>& songIds, gd::vector<int>& sf
 SCREWYOU2_HOOK_INIT(AudioAssetsBrowser, songIds, sfxIds)
 
 
-#include <Geode/modify/AudioEffectsLayer.hpp>
 #if defined GEODE_IS_WINDOWS
+#include <Geode/modify/AudioEffectsLayer.hpp>
 SCREWYOU2_HOOK(AudioEffectsLayer, gd::string p0)
 SCREWYOU2_HOOK_INIT(AudioEffectsLayer, p0)
 #endif
@@ -76,15 +76,15 @@ SCREWYOU2_HOOK(AudioLineGuideGameObject, )
 SCREWYOU2_HOOK_INIT(AudioLineGuideGameObject)
 
 
-#include <Geode/modify/BonusDropdown.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/BonusDropdown.hpp>
 SCREWYOU2_HOOK(BonusDropdown, gd::string p0, int p1)
 SCREWYOU2_HOOK_INIT(BonusDropdown, p0, p1)
 #endif
 
 
-#include <Geode/modify/BoomListLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/BoomListLayer.hpp>
 SCREWYOU2_HOOK(BoomListLayer, BoomListView* p0, char const* p1)
 SCREWYOU2_HOOK_INIT(BoomListLayer, p0, p1)
 #endif
@@ -98,29 +98,29 @@ SCREWYOU2_HOOK(BoomScrollLayer, cocos2d::CCArray* p0, int p1, bool p2, cocos2d::
 SCREWYOU2_HOOK_INIT(BoomScrollLayer, p0, p1, p2, p3, p4)
 
 
-#include <Geode/modify/BrowseSmartKeyLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/BrowseSmartKeyLayer.hpp>
 SCREWYOU2_HOOK(BrowseSmartKeyLayer, GJSmartTemplate* p0, gd::string p1)
 SCREWYOU2_HOOK_INIT(BrowseSmartKeyLayer, p0, p1)
 #endif
 
 
-#include <Geode/modify/BrowseSmartTemplateLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/BrowseSmartTemplateLayer.hpp>
 SCREWYOU2_HOOK(BrowseSmartTemplateLayer, GJSmartTemplate* p0, SmartBrowseFilter p1)
 SCREWYOU2_HOOK_INIT(BrowseSmartTemplateLayer, p0, p1)
 #endif
 
 
-#include <Geode/modify/ButtonSprite.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/ButtonSprite.hpp>
 SCREWYOU2_HOOK(ButtonSprite, cocos2d::CCSprite* topSprite, int width, int unused, float height, float scale, bool absolute, char const* bgSprite, bool noScaleSpriteForBG)
 SCREWYOU2_HOOK_INIT(ButtonSprite, topSprite, width, unused, height, scale, absolute, bgSprite, noScaleSpriteForBG)
 #endif
 
 
-#include <Geode/modify/CCAlertCircle.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/CCAlertCircle.hpp>
 SCREWYOU2_HOOK(CCAlertCircle, )
 SCREWYOU2_HOOK_INIT(CCAlertCircle)
 #endif
@@ -134,8 +134,8 @@ SCREWYOU2_HOOK(CCCircleWave, float startRadius, float endRadius, float duration,
 SCREWYOU2_HOOK_INIT(CCCircleWave, startRadius, endRadius, duration, fadeIn, easeOut)
 
 
-#include <Geode/modify/CCCountdown.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/CCCountdown.hpp>
 SCREWYOU2_HOOK(CCCountdown, )
 SCREWYOU2_HOOK_INIT(CCCountdown)
 #endif
@@ -185,8 +185,8 @@ SCREWYOU2_HOOK(ColorChannelSprite, )
 SCREWYOU2_HOOK_INIT(ColorChannelSprite)
 
 
-#include <Geode/modify/ColorSelectLiveOverlay.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/ColorSelectLiveOverlay.hpp>
 SCREWYOU2_HOOK(ColorSelectLiveOverlay, ColorAction* p0, ColorAction* p1, EffectGameObject* p2)
 SCREWYOU2_HOOK_INIT(ColorSelectLiveOverlay, p0, p1, p2)
 #endif
@@ -208,15 +208,15 @@ SCREWYOU2_HOOK(ConfigureHSVWidget, cocos2d::ccHSVValue hsv, bool unused, bool ad
 SCREWYOU2_HOOK_INIT(ConfigureHSVWidget, hsv, unused, addInputs)
 
 
-#include <Geode/modify/ConfigureValuePopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/ConfigureValuePopup.hpp>
 SCREWYOU2_HOOK(ConfigureValuePopup, ConfigureValuePopupDelegate* p0, float p1, float p2, float p3, gd::string p4, gd::string p5)
 SCREWYOU2_HOOK_INIT(ConfigureValuePopup, p0, p1, p2, p3, p4, p5)
 #endif
 
 
-#include <Geode/modify/CreateGuidelinesLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/CreateGuidelinesLayer.hpp>
 SCREWYOU2_HOOK(CreateGuidelinesLayer, CustomSongDelegate* p0, AudioGuidelinesType p1)
 SCREWYOU2_HOOK_INIT(CreateGuidelinesLayer, p0, p1)
 #endif
@@ -234,8 +234,8 @@ SCREWYOU2_HOOK(CurrencyRewardLayer, int orbs, int stars, int moons, int diamonds
 SCREWYOU2_HOOK_INIT(CurrencyRewardLayer, orbs, stars, moons, diamonds, demonKey, keyCount, shardType, shardsCount, position, rewardType, p10, time)
 
 
-#include <Geode/modify/CurrencySprite.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/CurrencySprite.hpp>
 SCREWYOU2_HOOK(CurrencySprite, CurrencySpriteType p0, bool p1)
 SCREWYOU2_HOOK_INIT(CurrencySprite, p0, p1)
 #endif
@@ -245,8 +245,8 @@ SCREWYOU2_HOOK(CustomizeObjectLayer, GameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(CustomizeObjectLayer, p0, p1)
 
 
-#include <Geode/modify/CustomizeObjectSettingsPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/CustomizeObjectSettingsPopup.hpp>
 SCREWYOU2_HOOK(CustomizeObjectSettingsPopup, GameObject* p0, cocos2d::CCArray* p1, CustomizeObjectLayer* p2)
 SCREWYOU2_HOOK_INIT(CustomizeObjectSettingsPopup, p0, p1, p2)
 #endif
@@ -292,8 +292,8 @@ SCREWYOU2_HOOK(DialogLayer, DialogObject* p0, cocos2d::CCArray* p1, int p2)
 SCREWYOU2_HOOK_INIT(DialogLayer, p0, p1, p2)
 
 
-#include <Geode/modify/DrawGridLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS || defined GEODE_IS_IOS
+#include <Geode/modify/DrawGridLayer.hpp>
 SCREWYOU2_HOOK(DrawGridLayer, cocos2d::CCNode* p0, LevelEditorLayer* p1)
 SCREWYOU2_HOOK_INIT(DrawGridLayer, p0, p1)
 #endif
@@ -303,15 +303,15 @@ SCREWYOU2_HOOK(DungeonBarsSprite, )
 SCREWYOU2_HOOK_INIT(DungeonBarsSprite)
 
 
-#include <Geode/modify/EditButtonBar.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/EditButtonBar.hpp>
 SCREWYOU2_HOOK(EditButtonBar, cocos2d::CCArray* objects, cocos2d::CCPoint position, int tab, bool hasCreateItems, int columns, int rows)
 SCREWYOU2_HOOK_INIT(EditButtonBar, objects, position, tab, hasCreateItems, columns, rows)
 #endif
 
 
-#include <Geode/modify/EditGameObjectPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/EditGameObjectPopup.hpp>
 SCREWYOU2_HOOK(EditGameObjectPopup, EffectGameObject* p0, cocos2d::CCArray* p1, bool p2)
 SCREWYOU2_HOOK_INIT(EditGameObjectPopup, p0, p1, p2)
 #endif
@@ -349,8 +349,8 @@ SCREWYOU2_HOOK(EndTriggerGameObject, )
 SCREWYOU2_HOOK_INIT(EndTriggerGameObject)
 
 
-#include <Geode/modify/EnhancedGameObject.hpp>
 #if defined GEODE_IS_WINDOWS
+#include <Geode/modify/EnhancedGameObject.hpp>
 SCREWYOU2_HOOK(EnhancedGameObject, char const* p0)
 SCREWYOU2_HOOK_INIT(EnhancedGameObject, p0)
 #endif
@@ -368,8 +368,8 @@ SCREWYOU2_HOOK(ExtendedLayer, )
 SCREWYOU2_HOOK_INIT(ExtendedLayer)
 
 
-#include <Geode/modify/FileSaveManager.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/FileSaveManager.hpp>
 SCREWYOU2_HOOK(FileSaveManager, )
 SCREWYOU2_HOOK_INIT(FileSaveManager)
 #endif
@@ -411,8 +411,8 @@ SCREWYOU2_HOOK(GameLevelManager, )
 SCREWYOU2_HOOK_INIT(GameLevelManager)
 
 
-#include <Geode/modify/GameLevelOptionsLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GameLevelOptionsLayer.hpp>
 SCREWYOU2_HOOK(GameLevelOptionsLayer, GJGameLevel* p0)
 SCREWYOU2_HOOK_INIT(GameLevelOptionsLayer, p0)
 #endif
@@ -458,15 +458,15 @@ SCREWYOU2_HOOK(GJBaseGameLayer, )
 SCREWYOU2_HOOK_INIT(GJBaseGameLayer)
 
 
-#include <Geode/modify/GJBigSprite.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJBigSprite.hpp>
 SCREWYOU2_HOOK(GJBigSprite, )
 SCREWYOU2_HOOK_INIT(GJBigSprite)
 #endif
 
 
-#include <Geode/modify/GJBigSpriteNode.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJBigSpriteNode.hpp>
 SCREWYOU2_HOOK(GJBigSpriteNode, )
 SCREWYOU2_HOOK_INIT(GJBigSpriteNode)
 #endif
@@ -484,8 +484,8 @@ SCREWYOU2_HOOK(GJCommentListLayer, BoomListView* listView, char const* title, co
 SCREWYOU2_HOOK_INIT(GJCommentListLayer, listView, title, color, width, height, blueBorder)
 
 
-#include <Geode/modify/GJDifficultySprite.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJDifficultySprite.hpp>
 SCREWYOU2_HOOK(GJDifficultySprite, int p0, GJDifficultyName p1)
 SCREWYOU2_HOOK_INIT(GJDifficultySprite, p0, p1)
 #endif
@@ -499,8 +499,8 @@ SCREWYOU2_HOOK(GJEffectManager, )
 SCREWYOU2_HOOK_INIT(GJEffectManager)
 
 
-#include <Geode/modify/GJFlyGroundLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJFlyGroundLayer.hpp>
 SCREWYOU2_HOOK(GJFlyGroundLayer, )
 SCREWYOU2_HOOK_INIT(GJFlyGroundLayer)
 #endif
@@ -518,8 +518,8 @@ SCREWYOU2_HOOK(GJGameLevel, )
 SCREWYOU2_HOOK_INIT(GJGameLevel)
 
 
-#include <Geode/modify/GJGameLoadingLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS || defined GEODE_IS_IOS
+#include <Geode/modify/GJGameLoadingLayer.hpp>
 SCREWYOU2_HOOK(GJGameLoadingLayer, GJGameLevel* level, bool editor)
 SCREWYOU2_HOOK_INIT(GJGameLoadingLayer, level, editor)
 #endif
@@ -565,15 +565,15 @@ SCREWYOU2_HOOK(GJMessageCell, )
 SCREWYOU2_HOOK_INIT(GJMessageCell)
 
 
-#include <Geode/modify/GJMessagePopup.hpp>
 #if defined GEODE_IS_WINDOWS
+#include <Geode/modify/GJMessagePopup.hpp>
 SCREWYOU2_HOOK(GJMessagePopup, GJUserMessage* p0)
 SCREWYOU2_HOOK_INIT(GJMessagePopup, p0)
 #endif
 
 
-#include <Geode/modify/GJMGLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJMGLayer.hpp>
 SCREWYOU2_HOOK(GJMGLayer, int p0)
 SCREWYOU2_HOOK_INIT(GJMGLayer, p0)
 #endif
@@ -587,22 +587,22 @@ SCREWYOU2_HOOK(GJObjectDecoder, )
 SCREWYOU2_HOOK_INIT(GJObjectDecoder)
 
 
-#include <Geode/modify/GJOptionsLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJOptionsLayer.hpp>
 SCREWYOU2_HOOK(GJOptionsLayer, int p0)
 SCREWYOU2_HOOK_INIT(GJOptionsLayer, p0)
 #endif
 
 
-#include <Geode/modify/GJPathPage.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJPathPage.hpp>
 SCREWYOU2_HOOK(GJPathPage, int p0, GJPathsLayer* p1)
 SCREWYOU2_HOOK_INIT(GJPathPage, p0, p1)
 #endif
 
 
-#include <Geode/modify/GJPathRewardPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJPathRewardPopup.hpp>
 SCREWYOU2_HOOK(GJPathRewardPopup, int p0)
 SCREWYOU2_HOOK_INIT(GJPathRewardPopup, p0)
 #endif
@@ -612,8 +612,8 @@ SCREWYOU2_HOOK(GJPathsLayer, )
 SCREWYOU2_HOOK_INIT(GJPathsLayer)
 
 
-#include <Geode/modify/GJPathSprite.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJPathSprite.hpp>
 SCREWYOU2_HOOK(GJPathSprite, int p0)
 SCREWYOU2_HOOK_INIT(GJPathSprite, p0)
 #endif
@@ -631,8 +631,8 @@ SCREWYOU2_HOOK(GJRequestCell, )
 SCREWYOU2_HOOK_INIT(GJRequestCell)
 
 
-#include <Geode/modify/GJRewardItem.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJRewardItem.hpp>
 SCREWYOU2_HOOK(GJRewardItem, int chestID, int timeRemaining, gd::string p2)
 SCREWYOU2_HOOK_INIT(GJRewardItem, chestID, timeRemaining, p2)
 #endif
@@ -642,8 +642,8 @@ SCREWYOU2_HOOK(GJRobotSprite, int p0, gd::string p1)
 SCREWYOU2_HOOK_INIT(GJRobotSprite, p0, p1)
 
 
-#include <Geode/modify/GJRotateCommandLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJRotateCommandLayer.hpp>
 SCREWYOU2_HOOK(GJRotateCommandLayer, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(GJRotateCommandLayer, p0, p1)
 #endif
@@ -681,8 +681,8 @@ SCREWYOU2_HOOK(GJTransformControl, )
 SCREWYOU2_HOOK_INIT(GJTransformControl)
 
 
-#include <Geode/modify/GJUINode.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJUINode.hpp>
 SCREWYOU2_HOOK(GJUINode, UIButtonConfig& p0)
 SCREWYOU2_HOOK_INIT(GJUINode, p0)
 #endif
@@ -700,15 +700,15 @@ SCREWYOU2_HOOK(GJUserScore, )
 SCREWYOU2_HOOK_INIT(GJUserScore)
 
 
-#include <Geode/modify/GJWorldNode.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJWorldNode.hpp>
 SCREWYOU2_HOOK(GJWorldNode, int p0, WorldSelectLayer* p1)
 SCREWYOU2_HOOK_INIT(GJWorldNode, p0, p1)
 #endif
 
 
-#include <Geode/modify/GJWriteMessagePopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/GJWriteMessagePopup.hpp>
 SCREWYOU2_HOOK(GJWriteMessagePopup, int p0, int p1)
 SCREWYOU2_HOOK_INIT(GJWriteMessagePopup, p0, p1)
 #endif
@@ -738,8 +738,8 @@ SCREWYOU2_HOOK(HSVWidgetPopup, cocos2d::ccHSVValue hsv, HSVWidgetDelegate* deleg
 SCREWYOU2_HOOK_INIT(HSVWidgetPopup, hsv, delegate, title)
 
 
-#include <Geode/modify/InfoAlertButton.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/InfoAlertButton.hpp>
 SCREWYOU2_HOOK(InfoAlertButton, gd::string title, gd::string desc, float spriteScale)
 SCREWYOU2_HOOK_INIT(InfoAlertButton, title, desc, spriteScale)
 #endif
@@ -753,8 +753,8 @@ SCREWYOU2_HOOK(ItemInfoPopup, int p0, UnlockType p1)
 SCREWYOU2_HOOK_INIT(ItemInfoPopup, p0, p1)
 
 
-#include <Geode/modify/KeybindingsLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/KeybindingsLayer.hpp>
 SCREWYOU2_HOOK(KeybindingsLayer, )
 SCREWYOU2_HOOK_INIT(KeybindingsLayer)
 #endif
@@ -796,8 +796,8 @@ SCREWYOU2_HOOK(LevelEditorLayer, GJGameLevel* p0, bool p1)
 SCREWYOU2_HOOK_INIT(LevelEditorLayer, p0, p1)
 
 
-#include <Geode/modify/LevelFeatureLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/LevelFeatureLayer.hpp>
 SCREWYOU2_HOOK(LevelFeatureLayer, int p0)
 SCREWYOU2_HOOK_INIT(LevelFeatureLayer, p0)
 #endif
@@ -815,15 +815,15 @@ SCREWYOU2_HOOK(LevelListLayer, GJLevelList* p0)
 SCREWYOU2_HOOK_INIT(LevelListLayer, p0)
 
 
-#include <Geode/modify/LevelOptionsLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/LevelOptionsLayer.hpp>
 SCREWYOU2_HOOK(LevelOptionsLayer, LevelSettingsObject* p0)
 SCREWYOU2_HOOK_INIT(LevelOptionsLayer, p0)
 #endif
 
 
-#include <Geode/modify/LevelOptionsLayer2.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/LevelOptionsLayer2.hpp>
 SCREWYOU2_HOOK(LevelOptionsLayer2, LevelSettingsObject* p0)
 SCREWYOU2_HOOK_INIT(LevelOptionsLayer2, p0)
 #endif
@@ -853,15 +853,15 @@ SCREWYOU2_HOOK(LikeItemLayer, LikeItemType p0, int p1, int p2)
 SCREWYOU2_HOOK_INIT(LikeItemLayer, p0, p1, p2)
 
 
-#include <Geode/modify/ListButtonBar.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/ListButtonBar.hpp>
 SCREWYOU2_HOOK(ListButtonBar, cocos2d::CCArray* items, cocos2d::CCPoint position, int columns, int rows, float columnOffset, float rowOffset, float offset, float arrowOffset, int arrowType)
 SCREWYOU2_HOOK_INIT(ListButtonBar, items, position, columns, rows, columnOffset, rowOffset, offset, arrowOffset, arrowType)
 #endif
 
 
-#include <Geode/modify/ListButtonPage.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/ListButtonPage.hpp>
 SCREWYOU2_HOOK(ListButtonPage, cocos2d::CCArray* items, cocos2d::CCPoint position, int columns, int rows, float columnOffset, float rowOffset, float offset)
 SCREWYOU2_HOOK_INIT(ListButtonPage, items, position, columns, rows, columnOffset, rowOffset, offset)
 #endif
@@ -883,8 +883,8 @@ SCREWYOU2_HOOK(MapPackCell, )
 SCREWYOU2_HOOK_INIT(MapPackCell)
 
 
-#include <Geode/modify/MapSelectLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/MapSelectLayer.hpp>
 SCREWYOU2_HOOK(MapSelectLayer, )
 SCREWYOU2_HOOK_INIT(MapSelectLayer)
 #endif
@@ -914,22 +914,22 @@ SCREWYOU2_HOOK(MoreVideoOptionsLayer, )
 SCREWYOU2_HOOK_INIT(MoreVideoOptionsLayer)
 
 
-#include <Geode/modify/MultiplayerLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/MultiplayerLayer.hpp>
 SCREWYOU2_HOOK(MultiplayerLayer, )
 SCREWYOU2_HOOK_INIT(MultiplayerLayer)
 #endif
 
 
-#include <Geode/modify/MultiTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/MultiTriggerPopup.hpp>
 SCREWYOU2_HOOK(MultiTriggerPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(MultiTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/MusicBrowser.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/MusicBrowser.hpp>
 SCREWYOU2_HOOK(MusicBrowser, int p0, GJSongType p1)
 SCREWYOU2_HOOK_INIT(MusicBrowser, p0, p1)
 #endif
@@ -939,8 +939,8 @@ SCREWYOU2_HOOK(MusicDownloadManager, )
 SCREWYOU2_HOOK_INIT(MusicDownloadManager)
 
 
-#include <Geode/modify/NCSInfoLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/NCSInfoLayer.hpp>
 SCREWYOU2_HOOK(NCSInfoLayer, CustomSongLayer* p0)
 SCREWYOU2_HOOK_INIT(NCSInfoLayer, p0)
 #endif
@@ -954,8 +954,8 @@ SCREWYOU2_HOOK(NumberInputLayer, )
 SCREWYOU2_HOOK_INIT(NumberInputLayer)
 
 
-#include <Geode/modify/OBB2D.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/OBB2D.hpp>
 SCREWYOU2_HOOK(OBB2D, cocos2d::CCPoint center, float width, float height, float rotationAngle)
 SCREWYOU2_HOOK_INIT(OBB2D, center, width, height, rotationAngle)
 #endif
@@ -1001,8 +1001,8 @@ SCREWYOU2_HOOK(PlayLayer, GJGameLevel* level, bool useReplay, bool dontCreateObj
 SCREWYOU2_HOOK_INIT(PlayLayer, level, useReplay, dontCreateObjects)
 
 
-#include <Geode/modify/PriceLabel.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/PriceLabel.hpp>
 SCREWYOU2_HOOK(PriceLabel, int p0)
 SCREWYOU2_HOOK_INIT(PriceLabel, p0)
 #endif
@@ -1048,15 +1048,15 @@ SCREWYOU2_HOOK(SearchButton, char const* p0, char const* p1, float p2, char cons
 SCREWYOU2_HOOK_INIT(SearchButton, p0, p1, p2, p3)
 
 
-#include <Geode/modify/SearchSFXPopup.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SearchSFXPopup.hpp>
 SCREWYOU2_HOOK(SearchSFXPopup, gd::string p0)
 SCREWYOU2_HOOK_INIT(SearchSFXPopup, p0)
 #endif
 
 
-#include <Geode/modify/SecretGame01Layer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SecretGame01Layer.hpp>
 SCREWYOU2_HOOK(SecretGame01Layer, )
 SCREWYOU2_HOOK_INIT(SecretGame01Layer)
 #endif
@@ -1082,8 +1082,8 @@ SCREWYOU2_HOOK(SecretLayer5, )
 SCREWYOU2_HOOK_INIT(SecretLayer5)
 
 
-#include <Geode/modify/SecretLayer6.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SecretLayer6.hpp>
 SCREWYOU2_HOOK(SecretLayer6, )
 SCREWYOU2_HOOK_INIT(SecretLayer6)
 #endif
@@ -1097,15 +1097,15 @@ SCREWYOU2_HOOK(SecretRewardsLayer, bool p0)
 SCREWYOU2_HOOK_INIT(SecretRewardsLayer, p0)
 
 
-#include <Geode/modify/SelectArtLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SelectArtLayer.hpp>
 SCREWYOU2_HOOK(SelectArtLayer, SelectArtType p0, int p1)
 SCREWYOU2_HOOK_INIT(SelectArtLayer, p0, p1)
 #endif
 
 
-#include <Geode/modify/SelectEventLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SelectEventLayer.hpp>
 SCREWYOU2_HOOK(SelectEventLayer, SetupEventLinkPopup* p0, gd::set<int>& p1)
 SCREWYOU2_HOOK_INIT(SelectEventLayer, p0, p1)
 #endif
@@ -1115,8 +1115,8 @@ SCREWYOU2_HOOK(SelectFontLayer, LevelEditorLayer* p0)
 SCREWYOU2_HOOK_INIT(SelectFontLayer, p0)
 
 
-#include <Geode/modify/SelectListIconLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SelectListIconLayer.hpp>
 SCREWYOU2_HOOK(SelectListIconLayer, int p0)
 SCREWYOU2_HOOK_INIT(SelectListIconLayer, p0)
 #endif
@@ -1130,8 +1130,8 @@ SCREWYOU2_HOOK(SelectSettingLayer, SelectSettingType p0, int p1)
 SCREWYOU2_HOOK_INIT(SelectSettingLayer, p0, p1)
 
 
-#include <Geode/modify/SelectSFXSortLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SelectSFXSortLayer.hpp>
 SCREWYOU2_HOOK(SelectSFXSortLayer, AudioSortType p0)
 SCREWYOU2_HOOK_INIT(SelectSFXSortLayer, p0)
 #endif
@@ -1141,15 +1141,15 @@ SCREWYOU2_HOOK(SequenceTriggerGameObject, )
 SCREWYOU2_HOOK_INIT(SequenceTriggerGameObject)
 
 
-#include <Geode/modify/SetColorIDPopup.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetColorIDPopup.hpp>
 SCREWYOU2_HOOK(SetColorIDPopup, int p0)
 SCREWYOU2_HOOK_INIT(SetColorIDPopup, p0)
 #endif
 
 
-#include <Geode/modify/SetFolderPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetFolderPopup.hpp>
 SCREWYOU2_HOOK(SetFolderPopup, int value, bool isCreated, gd::string title)
 SCREWYOU2_HOOK_INIT(SetFolderPopup, value, isCreated, title)
 #endif
@@ -1167,43 +1167,43 @@ SCREWYOU2_HOOK(SetItemIDLayer, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetItemIDLayer, p0, p1)
 
 
-#include <Geode/modify/SetLevelOrderPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetLevelOrderPopup.hpp>
 SCREWYOU2_HOOK(SetLevelOrderPopup, int levelID, int order, int amount)
 SCREWYOU2_HOOK_INIT(SetLevelOrderPopup, levelID, order, amount)
 #endif
 
 
-#include <Geode/modify/SetTargetIDLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetTargetIDLayer.hpp>
 SCREWYOU2_HOOK(SetTargetIDLayer, EffectGameObject* p0, cocos2d::CCArray* p1, gd::string p2, gd::string p3, int p4, int p5, int p6)
 SCREWYOU2_HOOK_INIT(SetTargetIDLayer, p0, p1, p2, p3, p4, p5, p6)
 #endif
 
 
-#include <Geode/modify/SetTextPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetTextPopup.hpp>
 SCREWYOU2_HOOK(SetTextPopup, gd::string p0, gd::string p1, int p2, gd::string p3, gd::string p4, bool p5, float p6)
 SCREWYOU2_HOOK_INIT(SetTextPopup, p0, p1, p2, p3, p4, p5, p6)
 #endif
 
 
-#include <Geode/modify/SetupAdvFollowEditPhysicsPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupAdvFollowEditPhysicsPopup.hpp>
 SCREWYOU2_HOOK(SetupAdvFollowEditPhysicsPopup, AdvancedFollowEditObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupAdvFollowEditPhysicsPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupAdvFollowPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupAdvFollowPopup.hpp>
 SCREWYOU2_HOOK(SetupAdvFollowPopup, AdvancedFollowTriggerObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupAdvFollowPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupAdvFollowRetargetPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupAdvFollowRetargetPopup.hpp>
 SCREWYOU2_HOOK(SetupAdvFollowRetargetPopup, AdvancedFollowEditObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupAdvFollowRetargetPopup, p0, p1)
 #endif
@@ -1213,22 +1213,22 @@ SCREWYOU2_HOOK(SetupAnimationPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupAnimationPopup, p0, p1)
 
 
-#include <Geode/modify/SetupAnimSettingsPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupAnimSettingsPopup.hpp>
 SCREWYOU2_HOOK(SetupAnimSettingsPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupAnimSettingsPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupAreaAnimTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupAreaAnimTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupAreaAnimTriggerPopup, EnterEffectObject* p0, cocos2d::CCArray* p1, int p2)
 SCREWYOU2_HOOK_INIT(SetupAreaAnimTriggerPopup, p0, p1, p2)
 #endif
 
 
-#include <Geode/modify/SetupAreaFadeTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupAreaFadeTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupAreaFadeTriggerPopup, EnterEffectObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupAreaFadeTriggerPopup, p0, p1)
 #endif
@@ -1238,36 +1238,36 @@ SCREWYOU2_HOOK(SetupAreaMoveTriggerPopup, EnterEffectObject* p0, cocos2d::CCArra
 SCREWYOU2_HOOK_INIT(SetupAreaMoveTriggerPopup, p0, p1)
 
 
-#include <Geode/modify/SetupAreaRotateTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupAreaRotateTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupAreaRotateTriggerPopup, EnterEffectObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupAreaRotateTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupAreaTintTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupAreaTintTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupAreaTintTriggerPopup, EnterEffectObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupAreaTintTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupAreaTransformTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupAreaTransformTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupAreaTransformTriggerPopup, EnterEffectObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupAreaTransformTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupAreaTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupAreaTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupAreaTriggerPopup, EnterEffectObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupAreaTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupArtSwitchPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupArtSwitchPopup.hpp>
 SCREWYOU2_HOOK(SetupArtSwitchPopup, ArtTriggerGameObject* p0, cocos2d::CCArray* p1, int p2)
 SCREWYOU2_HOOK_INIT(SetupArtSwitchPopup, p0, p1, p2)
 #endif
@@ -1277,8 +1277,8 @@ SCREWYOU2_HOOK(SetupAudioLineGuidePopup, AudioLineGuideGameObject* p0, cocos2d::
 SCREWYOU2_HOOK_INIT(SetupAudioLineGuidePopup, p0, p1)
 
 
-#include <Geode/modify/SetupBGSpeedTrigger.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupBGSpeedTrigger.hpp>
 SCREWYOU2_HOOK(SetupBGSpeedTrigger, EffectGameObject* p0, cocos2d::CCArray* p1, int p2)
 SCREWYOU2_HOOK_INIT(SetupBGSpeedTrigger, p0, p1, p2)
 #endif
@@ -1288,8 +1288,8 @@ SCREWYOU2_HOOK(SetupCameraEdgePopup, CameraTriggerGameObject* p0, cocos2d::CCArr
 SCREWYOU2_HOOK_INIT(SetupCameraEdgePopup, p0, p1)
 
 
-#include <Geode/modify/SetupCameraGuidePopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupCameraGuidePopup.hpp>
 SCREWYOU2_HOOK(SetupCameraGuidePopup, CameraTriggerGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupCameraGuidePopup, p0, p1)
 #endif
@@ -1303,22 +1303,22 @@ SCREWYOU2_HOOK(SetupCameraOffsetTrigger, CameraTriggerGameObject* p0, cocos2d::C
 SCREWYOU2_HOOK_INIT(SetupCameraOffsetTrigger, p0, p1)
 
 
-#include <Geode/modify/SetupCameraRotatePopup.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupCameraRotatePopup.hpp>
 SCREWYOU2_HOOK(SetupCameraRotatePopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupCameraRotatePopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupCameraRotatePopup2.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupCameraRotatePopup2.hpp>
 SCREWYOU2_HOOK(SetupCameraRotatePopup2, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupCameraRotatePopup2, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupCheckpointPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupCheckpointPopup.hpp>
 SCREWYOU2_HOOK(SetupCheckpointPopup, CheckpointGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupCheckpointPopup, p0, p1)
 #endif
@@ -1328,8 +1328,8 @@ SCREWYOU2_HOOK(SetupCoinLayer, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupCoinLayer, p0, p1)
 
 
-#include <Geode/modify/SetupCollisionStateTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupCollisionStateTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupCollisionStateTriggerPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupCollisionStateTriggerPopup, p0, p1)
 #endif
@@ -1343,29 +1343,29 @@ SCREWYOU2_HOOK(SetupCountTriggerPopup, EffectGameObject* p0, cocos2d::CCArray* p
 SCREWYOU2_HOOK_INIT(SetupCountTriggerPopup, p0, p1)
 
 
-#include <Geode/modify/SetupDashRingPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupDashRingPopup.hpp>
 SCREWYOU2_HOOK(SetupDashRingPopup, DashRingObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupDashRingPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupEndPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupEndPopup.hpp>
 SCREWYOU2_HOOK(SetupEndPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupEndPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupEnterEffectPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupEnterEffectPopup.hpp>
 SCREWYOU2_HOOK(SetupEnterEffectPopup, EnterEffectObject* p0, cocos2d::CCArray* p1, int p2)
 SCREWYOU2_HOOK_INIT(SetupEnterEffectPopup, p0, p1, p2)
 #endif
 
 
-#include <Geode/modify/SetupEnterTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupEnterTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupEnterTriggerPopup, EnterEffectObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupEnterTriggerPopup, p0, p1)
 #endif
@@ -1375,15 +1375,15 @@ SCREWYOU2_HOOK(SetupEventLinkPopup, EventLinkTrigger* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupEventLinkPopup, p0, p1)
 
 
-#include <Geode/modify/SetupForceBlockPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupForceBlockPopup.hpp>
 SCREWYOU2_HOOK(SetupForceBlockPopup, ForceBlockGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupForceBlockPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupGameplayOffsetPopup.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupGameplayOffsetPopup.hpp>
 SCREWYOU2_HOOK(SetupGameplayOffsetPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupGameplayOffsetPopup, p0, p1)
 #endif
@@ -1393,15 +1393,15 @@ SCREWYOU2_HOOK(SetupGradientPopup, GradientTriggerObject* p0, cocos2d::CCArray* 
 SCREWYOU2_HOOK_INIT(SetupGradientPopup, p0, p1)
 
 
-#include <Geode/modify/SetupGravityModPopup.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupGravityModPopup.hpp>
 SCREWYOU2_HOOK(SetupGravityModPopup, EffectGameObject* p0, cocos2d::CCArray* p1, bool p2)
 SCREWYOU2_HOOK_INIT(SetupGravityModPopup, p0, p1, p2)
 #endif
 
 
-#include <Geode/modify/SetupGravityTriggerPopup.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupGravityTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupGravityTriggerPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupGravityTriggerPopup, p0, p1)
 #endif
@@ -1415,8 +1415,8 @@ SCREWYOU2_HOOK(SetupInstantCountPopup, CountTriggerGameObject* p0, cocos2d::CCAr
 SCREWYOU2_HOOK_INIT(SetupInstantCountPopup, p0, p1)
 
 
-#include <Geode/modify/SetupInteractObjectPopup.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupInteractObjectPopup.hpp>
 SCREWYOU2_HOOK(SetupInteractObjectPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupInteractObjectPopup, p0, p1)
 #endif
@@ -1430,22 +1430,22 @@ SCREWYOU2_HOOK(SetupItemEditTriggerPopup, ItemTriggerGameObject* p0, cocos2d::CC
 SCREWYOU2_HOOK_INIT(SetupItemEditTriggerPopup, p0, p1)
 
 
-#include <Geode/modify/SetupKeyframeAnimPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupKeyframeAnimPopup.hpp>
 SCREWYOU2_HOOK(SetupKeyframeAnimPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupKeyframeAnimPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupKeyframePopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupKeyframePopup.hpp>
 SCREWYOU2_HOOK(SetupKeyframePopup, KeyframeGameObject* p0, cocos2d::CCArray* p1, LevelEditorLayer* p2)
 SCREWYOU2_HOOK_INIT(SetupKeyframePopup, p0, p1, p2)
 #endif
 
 
-#include <Geode/modify/SetupMGTrigger.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupMGTrigger.hpp>
 SCREWYOU2_HOOK(SetupMGTrigger, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupMGTrigger, p0, p1)
 #endif
@@ -1455,15 +1455,15 @@ SCREWYOU2_HOOK(SetupMoveCommandPopup, EffectGameObject* p0, cocos2d::CCArray* p1
 SCREWYOU2_HOOK_INIT(SetupMoveCommandPopup, p0, p1)
 
 
-#include <Geode/modify/SetupObjectControlPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupObjectControlPopup.hpp>
 SCREWYOU2_HOOK(SetupObjectControlPopup, ObjectControlGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupObjectControlPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupObjectOptions2Popup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupObjectOptions2Popup.hpp>
 SCREWYOU2_HOOK(SetupObjectOptions2Popup, GameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupObjectOptions2Popup, p0, p1)
 #endif
@@ -1485,8 +1485,8 @@ SCREWYOU2_HOOK(SetupOptionsTriggerPopup, GameOptionsTrigger* p0, cocos2d::CCArra
 SCREWYOU2_HOOK_INIT(SetupOptionsTriggerPopup, p0, p1)
 
 
-#include <Geode/modify/SetupPersistentItemTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupPersistentItemTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupPersistentItemTriggerPopup, ItemTriggerGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupPersistentItemTriggerPopup, p0, p1)
 #endif
@@ -1496,22 +1496,22 @@ SCREWYOU2_HOOK(SetupPickupTriggerPopup, EffectGameObject* p0, cocos2d::CCArray* 
 SCREWYOU2_HOOK_INIT(SetupPickupTriggerPopup, p0, p1)
 
 
-#include <Geode/modify/SetupPlatformerEndPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupPlatformerEndPopup.hpp>
 SCREWYOU2_HOOK(SetupPlatformerEndPopup, EndTriggerGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupPlatformerEndPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupPlayerControlPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupPlayerControlPopup.hpp>
 SCREWYOU2_HOOK(SetupPlayerControlPopup, PlayerControlGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupPlayerControlPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupPortalPopup.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupPortalPopup.hpp>
 SCREWYOU2_HOOK(SetupPortalPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupPortalPopup, p0, p1)
 #endif
@@ -1529,29 +1529,29 @@ SCREWYOU2_HOOK(SetupRandTriggerPopup, EffectGameObject* p0, cocos2d::CCArray* p1
 SCREWYOU2_HOOK_INIT(SetupRandTriggerPopup, p0, p1)
 
 
-#include <Geode/modify/SetupResetTriggerPopup.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupResetTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupResetTriggerPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupResetTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupReverbPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupReverbPopup.hpp>
 SCREWYOU2_HOOK(SetupReverbPopup, SFXTriggerGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupReverbPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupRotateCommandPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupRotateCommandPopup.hpp>
 SCREWYOU2_HOOK(SetupRotateCommandPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupRotateCommandPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupRotateGameplayPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupRotateGameplayPopup.hpp>
 SCREWYOU2_HOOK(SetupRotateGameplayPopup, RotateGameplayGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupRotateGameplayPopup, p0, p1)
 #endif
@@ -1565,29 +1565,29 @@ SCREWYOU2_HOOK(SetupSequenceTriggerPopup, SequenceTriggerGameObject* p0)
 SCREWYOU2_HOOK_INIT(SetupSequenceTriggerPopup, p0)
 
 
-#include <Geode/modify/SetupSFXEditPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupSFXEditPopup.hpp>
 SCREWYOU2_HOOK(SetupSFXEditPopup, SFXTriggerGameObject* p0, cocos2d::CCArray* p1, bool p2)
 SCREWYOU2_HOOK_INIT(SetupSFXEditPopup, p0, p1, p2)
 #endif
 
 
-#include <Geode/modify/SetupSFXPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupSFXPopup.hpp>
 SCREWYOU2_HOOK(SetupSFXPopup, SFXTriggerGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupSFXPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupShaderEffectPopup.hpp>
 #if defined GEODE_IS_WINDOWS
+#include <Geode/modify/SetupShaderEffectPopup.hpp>
 SCREWYOU2_HOOK(SetupShaderEffectPopup, EffectGameObject* p0, cocos2d::CCArray* p1, int p2)
 SCREWYOU2_HOOK_INIT(SetupShaderEffectPopup, p0, p1, p2)
 #endif
 
 
-#include <Geode/modify/SetupShakePopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupShakePopup.hpp>
 SCREWYOU2_HOOK(SetupShakePopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupShakePopup, p0, p1)
 #endif
@@ -1597,22 +1597,22 @@ SCREWYOU2_HOOK(SetupSmartBlockLayer, SmartGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupSmartBlockLayer, p0, p1)
 
 
-#include <Geode/modify/SetupSmartTemplateLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupSmartTemplateLayer.hpp>
 SCREWYOU2_HOOK(SetupSmartTemplateLayer, GJSmartTemplate* p0)
 SCREWYOU2_HOOK_INIT(SetupSmartTemplateLayer, p0)
 #endif
 
 
-#include <Geode/modify/SetupSongTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupSongTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupSongTriggerPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupSongTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupSpawnParticlePopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupSpawnParticlePopup.hpp>
 SCREWYOU2_HOOK(SetupSpawnParticlePopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupSpawnParticlePopup, p0, p1)
 #endif
@@ -1626,43 +1626,43 @@ SCREWYOU2_HOOK(SetupStaticCameraPopup, CameraTriggerGameObject* p0, cocos2d::CCA
 SCREWYOU2_HOOK_INIT(SetupStaticCameraPopup, p0, p1)
 
 
-#include <Geode/modify/SetupStopTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupStopTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupStopTriggerPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupStopTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupTeleportPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupTeleportPopup.hpp>
 SCREWYOU2_HOOK(SetupTeleportPopup, TeleportPortalObject* p0, cocos2d::CCArray* p1, int p2, bool p3)
 SCREWYOU2_HOOK_INIT(SetupTeleportPopup, p0, p1, p2, p3)
 #endif
 
 
-#include <Geode/modify/SetupTimerControlTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupTimerControlTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupTimerControlTriggerPopup, TimerTriggerGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupTimerControlTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupTimerEventTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupTimerEventTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupTimerEventTriggerPopup, TimerTriggerGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupTimerEventTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupTimerTriggerPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupTimerTriggerPopup.hpp>
 SCREWYOU2_HOOK(SetupTimerTriggerPopup, TimerTriggerGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupTimerTriggerPopup, p0, p1)
 #endif
 
 
-#include <Geode/modify/SetupTimeWarpPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupTimeWarpPopup.hpp>
 SCREWYOU2_HOOK(SetupTimeWarpPopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupTimeWarpPopup, p0, p1)
 #endif
@@ -1672,8 +1672,8 @@ SCREWYOU2_HOOK(SetupTouchTogglePopup, EffectGameObject* p0, cocos2d::CCArray* p1
 SCREWYOU2_HOOK_INIT(SetupTouchTogglePopup, p0, p1)
 
 
-#include <Geode/modify/SetupTransformPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SetupTransformPopup.hpp>
 SCREWYOU2_HOOK(SetupTransformPopup, TransformTriggerGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupTransformPopup, p0, p1)
 #endif
@@ -1711,8 +1711,8 @@ SCREWYOU2_HOOK(ShareLevelSettingsLayer, GJGameLevel* p0)
 SCREWYOU2_HOOK_INIT(ShareLevelSettingsLayer, p0)
 
 
-#include <Geode/modify/ShareListLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/ShareListLayer.hpp>
 SCREWYOU2_HOOK(ShareListLayer, GJLevelList* p0)
 SCREWYOU2_HOOK_INIT(ShareListLayer, p0)
 #endif
@@ -1722,8 +1722,8 @@ SCREWYOU2_HOOK(SimplePlayer, int p0)
 SCREWYOU2_HOOK_INIT(SimplePlayer, p0)
 
 
-#include <Geode/modify/SlideInLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SlideInLayer.hpp>
 SCREWYOU2_HOOK(SlideInLayer, )
 SCREWYOU2_HOOK_INIT(SlideInLayer)
 #endif
@@ -1741,22 +1741,22 @@ SCREWYOU2_HOOK(SongCell, )
 SCREWYOU2_HOOK_INIT(SongCell)
 
 
-#include <Geode/modify/SongInfoLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SongInfoLayer.hpp>
 SCREWYOU2_HOOK(SongInfoLayer, gd::string p0, gd::string p1, gd::string p2, gd::string p3, gd::string p4, gd::string p5, int p6, gd::string p7, int p8)
 SCREWYOU2_HOOK_INIT(SongInfoLayer, p0, p1, p2, p3, p4, p5, p6, p7, p8)
 #endif
 
 
-#include <Geode/modify/SongInfoObject.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_IOS
+#include <Geode/modify/SongInfoObject.hpp>
 SCREWYOU2_HOOK(SongInfoObject, int songID, gd::string songName, gd::string artistName, int artistID, float filesize, gd::string youtubeVideo, gd::string youtubeChannel, gd::string url, int nongType, gd::string extraArtistIDs, bool isNew, int libraryOrder, int priority)
 SCREWYOU2_HOOK_INIT(SongInfoObject, songID, songName, artistName, artistID, filesize, youtubeVideo, youtubeChannel, url, nongType, extraArtistIDs, isNew, libraryOrder, priority)
 #endif
 
 
-#include <Geode/modify/SongOptionsLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/SongOptionsLayer.hpp>
 SCREWYOU2_HOOK(SongOptionsLayer, CustomSongDelegate* p0)
 SCREWYOU2_HOOK_INIT(SongOptionsLayer, p0)
 #endif
@@ -1786,8 +1786,8 @@ SCREWYOU2_HOOK(TextAlertPopup, gd::string text, float delay, float scale, int op
 SCREWYOU2_HOOK_INIT(TextAlertPopup, text, delay, scale, opacity, font)
 
 
-#include <Geode/modify/TextArea.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/TextArea.hpp>
 SCREWYOU2_HOOK(TextArea, gd::string str, char const* font, float scale, float width, cocos2d::CCPoint anchor, float lineHeight, bool disableColor)
 SCREWYOU2_HOOK_INIT(TextArea, str, font, scale, width, anchor, lineHeight, disableColor)
 #endif
@@ -1805,8 +1805,8 @@ SCREWYOU2_HOOK(TutorialLayer, )
 SCREWYOU2_HOOK_INIT(TutorialLayer)
 
 
-#include <Geode/modify/TutorialPopup.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/TutorialPopup.hpp>
 SCREWYOU2_HOOK(TutorialPopup, gd::string p0)
 SCREWYOU2_HOOK_INIT(TutorialPopup, p0)
 #endif
@@ -1816,8 +1816,8 @@ SCREWYOU2_HOOK(UILayer, GJBaseGameLayer* p0)
 SCREWYOU2_HOOK_INIT(UILayer, p0)
 
 
-#include <Geode/modify/UIObjectSettingsPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/UIObjectSettingsPopup.hpp>
 SCREWYOU2_HOOK(UIObjectSettingsPopup, UISettingsGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(UIObjectSettingsPopup, p0, p1)
 #endif
@@ -1831,8 +1831,8 @@ SCREWYOU2_HOOK(UIPOptionsLayer, )
 SCREWYOU2_HOOK_INIT(UIPOptionsLayer)
 
 
-#include <Geode/modify/UISaveLoadLayer.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/UISaveLoadLayer.hpp>
 SCREWYOU2_HOOK(UISaveLoadLayer, UIOptionsLayer* p0)
 SCREWYOU2_HOOK_INIT(UISaveLoadLayer, p0)
 #endif
@@ -1850,15 +1850,15 @@ SCREWYOU2_HOOK(UploadActionPopup, UploadPopupDelegate* delegate, gd::string str)
 SCREWYOU2_HOOK_INIT(UploadActionPopup, delegate, str)
 
 
-#include <Geode/modify/UploadListPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/UploadListPopup.hpp>
 SCREWYOU2_HOOK(UploadListPopup, GJLevelList* p0)
 SCREWYOU2_HOOK_INIT(UploadListPopup, p0)
 #endif
 
 
-#include <Geode/modify/UploadPopup.hpp>
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/UploadPopup.hpp>
 SCREWYOU2_HOOK(UploadPopup, GJGameLevel* p0)
 SCREWYOU2_HOOK_INIT(UploadPopup, p0)
 #endif
@@ -1872,15 +1872,15 @@ SCREWYOU2_HOOK(VideoOptionsLayer, )
 SCREWYOU2_HOOK_INIT(VideoOptionsLayer)
 
 
-#include <Geode/modify/WorldLevelPage.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/WorldLevelPage.hpp>
 SCREWYOU2_HOOK(WorldLevelPage, GJGameLevel* p0, GJWorldNode* p1)
 SCREWYOU2_HOOK_INIT(WorldLevelPage, p0, p1)
 #endif
 
 
-#include <Geode/modify/WorldSelectLayer.hpp>
 #if defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
+#include <Geode/modify/WorldSelectLayer.hpp>
 SCREWYOU2_HOOK(WorldSelectLayer, int p0)
 SCREWYOU2_HOOK_INIT(WorldSelectLayer, p0)
 #endif

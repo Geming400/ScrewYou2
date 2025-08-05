@@ -79,8 +79,8 @@ class GDClass:
         ret: str = ""
         if ifDefs:
             ret = f"""
-{includeCall}
 {ifDefs}
+{includeCall}
 {hookCall}
 #endif
 
