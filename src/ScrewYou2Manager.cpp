@@ -28,6 +28,8 @@ void ScrewYou2Manager::killClass(std::string className) {
 void ScrewYou2Manager::killRandomClass() {
     if (m_survivingClasses.empty()) return;
     
-    log::info("Killed {}", *modUtils::select_randomly(m_survivingClasses.begin(), m_survivingClasses.end()));
-    m_survivingClasses.erase(modUtils::select_randomly(m_survivingClasses.begin(), m_survivingClasses.end()));
+    auto killedClass = modUtils::select_randomly(m_survivingClasses.begin(), m_survivingClasses.end());
+
+    log::info("Killed {}", *killedClass);
+    m_survivingClasses.erase(killedClass);
 }
