@@ -282,16 +282,12 @@ bool getReturnValue() {
         if (ScrewYou2Manager::get()->isKilled(CLASS_NAME) && Mod::get()->getSettingValue<bool>("enabled")) return getReturnValue(); \\
         if (!##className::init(__VA_ARGS__)) return false; \\
         if (Mod::get()->getSavedValue<bool>("first-time-loading", true)) { \\
+            log::info("Showing popup"); \\
             Mod::get()->setSavedValue<bool>("first-time-loading", false); \\
-            auto alert = createQuickPopup( \\
+            auto alert = FLAlertLayer::create( \\
                 "Before you continue", \\
                 "This mod CAN and WILL make your gd crash. Be sure to read this mod's description before continuing", \\
-                "Read", "Dismiss", \\
-                [](FLAlertLayer* alert, bool btn2) { \\
-                    if (!btn2) { \\
-                        openInfoPopup(Mod::get()); \\
-                    } \\
-                } \\
+                "Dismiss" \\
             ); \\
             alert->m_scene = this; \\
             alert->show(); \\
