@@ -10,9 +10,10 @@ class $modify(PlayerObjectButBetter, PlayerObject) {
 
         log::info("Played died: {}", p0);
 
-        ScrewYou2Manager::get()->killClass("MenuLayer");
-        /*for (size_t i = 0; i < Mod::get()->getSettingValue<int64_t>("intensity"); i++) {
+        // Testing this amazing mod
+        // ScrewYou2Manager::get()->killClass("MenuLayer");
+        for (size_t i = 0; i < Mod::get()->getSettingValue<int64_t>("intensity"); i++) {
             ScrewYou2Manager::get()->killRandomClass();
-        }*/
+        }
     }
 };
