@@ -13,10 +13,10 @@ This means that if you try to inizialize it, it will very likely crash.
 
 ## How can I get more fun out of this amazing mod ?
 
-> Be you
-> Go to mod's settings
-> `Return Value`: `false`
-> `Intensity`: `50`
+- Be you
+- Go to mod's settings
+- `Return Value`: `false`
+- `Intensity`: `50`
 
 ## Why the fuck did you hook every functions
 
