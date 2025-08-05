@@ -21,13 +21,13 @@ bool ScrewYou2Manager::isKilled(std::string className) {
 }
 
 void ScrewYou2Manager::killClass(std::string className) {
+    log::info("Killed {}", className);
     ranges::remove(m_survivingClasses, className);
 }
 
 void ScrewYou2Manager::killRandomClass() {
     if (m_survivingClasses.empty()) return;
-    #ifdef GEODE_IS_WINDOWS
-    #endif
+    
     log::info("Killed {}", *modUtils::select_randomly(m_survivingClasses.begin(), m_survivingClasses.end()));
     m_survivingClasses.erase(modUtils::select_randomly(m_survivingClasses.begin(), m_survivingClasses.end()));
 }
