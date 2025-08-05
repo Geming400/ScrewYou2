@@ -13,5 +13,11 @@ class $modify(PlayerObjectButBetter, PlayerObject) {
         for (size_t i = 0; i < Mod::get()->getSettingValue<int64_t>("intensity"); i++) {
             ScrewYou2Manager::get()->killRandomClass();
         }
+
+        if (ScrewYou2Manager::get()->getSurvivingClasses().size() == 0) {
+            // We can't send a notification to the player or else the game would crash
+            log::info("Gg !!!!");
+            log::info("You won't be able to do anything now");
+        }
     }
 };
