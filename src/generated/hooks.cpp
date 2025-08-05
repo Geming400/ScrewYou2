@@ -24,6 +24,7 @@ class $modify(Screwd##className, ##className) { \
         log::info("Class {} has been killed: ", CLASS_NAME, ScrewYou2Manager::get()->isKilled(CLASS_NAME)); \
         if (ScrewYou2Manager::get()->isKilled(CLASS_NAME) && Mod::get()->getSettingValue<bool>("enabled")) return getReturnValue();\
         if (!##className::init(__VA_ARGS__)) return false; \
+        return true; \
     } \
 };
 
