@@ -21,14 +21,6 @@
 			"type": "bool",
 			"default": true
 		},
-		"return-value": {
-			"name": "Return value",
-			"description": "The return value in the hooked initizalize's function. If this setting's value is `false`, there is a higher chance that your game will crash. Else, the node just won't initizalize (the game will also probably crash)",
-			"type": "string",
-			"default": "true",
-			"one-of": ["false", "true"],
-			"enable-if": "enabled"
-		},
 		"intensity": {
 			"name": "Intensity",
 			"description": "How many classes will be 'killed' on death",

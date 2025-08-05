@@ -8,6 +8,7 @@ using namespace geode::prelude;
 
 // Cursed macros but whatever, this isn't supposed to be the most readable thing after all
 
+/*
 bool getReturnValue() {
     auto returnVal = Mod::get()->getSettingValue<std::string>("return-value");
     switch (hash(returnVal.c_str())) {
@@ -15,6 +16,11 @@ bool getReturnValue() {
         case hash("false"): return false;
         default: return true;
     }
+}
+*/
+
+constexpr bool getReturnValue() {
+    return true;
 }
 
 #define SCREWYOU2_MENULAYER_CUSTOM_INIT(className, ...) { \
