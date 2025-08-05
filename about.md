@@ -2,7 +2,7 @@
 
 [Screw you](https://geode-sdk.org/mods/jarvisdevil.screwyou) by [jarvisdevil](https://geode-sdk.org/mods?developer=thejarvisdevil) but even more evil.
 
-## ![icon](GJ_infoIcon_001.png) WARNING !
+## ![icon](frame:GJ_infoIcon_001.png) WARNING !
 
 ### This mod **CAN** and **WILL** make your game crash, so if something breaks, this <cb>**is not my fault**</cb>.
 
