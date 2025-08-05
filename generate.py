@@ -9,6 +9,7 @@ from typing import Final
 
 HOOK_MACRO: Final[str] = "SCREWYOU2_HOOK"
 INIT_MACRO: Final[str] = "SCREWYOU2_HOOK_INIT"
+MENULAYER_CUSTOM_INIT_MACRO: Final[str] = "SCREWYOU2_MENULAYER_CUSTOM_INIT"
 
 parser = argparse.ArgumentParser(
         description='Used to generated "./src/generated/"'
@@ -20,7 +21,7 @@ parser.add_argument("-o", "--output", default="./src/",
 parser.add_argument("-i", "--ignore", default="",
                     help="A list of classes to ignore. Each elements is separated by a semi-colon")
 
-class GDClass:
+class CPPFunction:
     name: str
     params: str
     platforms: set[str]
@@ -31,18 +32,20 @@ class GDClass:
         self.platforms = platforms
     
     def isWin(self): return "win" in self.platforms
-    def isMac(self): return "imac" in self.platforms
+    def isMac(self): return "imac" in self.platforms or "m1" in self.platforms
+    def isIntelMac(self): return "imac" in self.platforms
+    def isArmMac(self): return "m1" in self.platforms
     def isIos(self): return "ios" in self.platforms
-    def isAndroid(self): return "imac" in self.platforms
+    def isAndroid(self): return "android" in self.platforms
     
     def isBindingAvalaible(self):
         return self.isWin() or self.isMac() or self.isIos() or self.isAndroid()
     
-    def isAllPlatforms(self):
+    def isAvalaibleOnAllPlatforms(self):
         return self.isWin() and self.isMac() and self.isIos() and self.isAndroid()
     
     def createIfdefs(self):
-        if not self.isBindingAvalaible() or self.isAllPlatforms(): return ""
+        if not self.isBindingAvalaible() or self.isAvalaibleOnAllPlatforms(): return ""
         if self.platforms or self.platforms != ['']:
             ret = ""
             
@@ -50,7 +53,8 @@ class GDClass:
             
             win = "GEODE_IS_WINDOWS" if self.isWin() else ""
             android = "GEODE_IS_ANDROID" if self.isAndroid() else ""
-            mac = "GEODE_IS_MACOS" if self.isMac() else ""
+            mac = "GEODE_IS_INTEL_MAC" if self.isIntelMac() else ""
+            mac = "GEODE_IS_ARM_MAC" if self.isArmMac() else mac
             ios = "GEODE_IS_IOS" if self.isIos() else ""
             
             if win:
@@ -147,10 +151,17 @@ def removeTypes(string: str):
     
 
 if __name__ == "__main__":
-    gdClasses: dict[str, GDClass] = {}
+    initFunctions: dict[str, CPPFunction] = {}
     unavailableClasses: int = 0
+    classesFoundByPlatforms: dict[str, int] = {
+        "win": 0,
+        "android": 0,
+        "ios": 0,
+        "imac": 0,
+        "m1": 0
+    }
     
-    args = parser.parse_args()
+    args = parser.parse_args([r"D:\Geode\bindings\bindings\2.2074\GeometryDash.bro"])
     
     toIgnore: list[str] = args.ignore.lower().split(";")
     
@@ -158,6 +169,7 @@ if __name__ == "__main__":
         return os.path.normpath(args.output + "\\generated\\" + file) # pyright: ignore[reportAttributeAccessIssue]
 
     currentClass: str = ""
+    isValidForAndroid: bool = False
 
     if not os.path.exists(os.path.normpath(f"{args.output}/generated/")):
         print("Creating path", os.path.normpath(f"{args.output}/generated/"))
@@ -168,7 +180,7 @@ if __name__ == "__main__":
     time1 = time.time()
 
     with open(os.path.normpath(args.geometrydash_broma_file)) as classes:
-        regex = r"(class (\w)+)|((bool init\(.+\))|(bool init\(\))) =[\w, ]+;" # fire regex
+        regex = r"(|.+?link\(android.+?\n)(class (\w)+)|((bool init\(.+\))|(bool init\(\))) =[\w, ]+;" # fire regex
         matches = re.finditer(regex, classes.read(), re.MULTILINE | re.IGNORECASE)
 
         ignoreNextInitFunc: bool = False
@@ -189,20 +201,31 @@ if __name__ == "__main__":
                 
                 if any(x in unparsedPlatforms for x in ("win", "m1", "imac", "ios")):
                     platforms = set(re.sub(r" 0x.+?(,|;)", "", unparsedPlatforms).strip().removeprefix("=").strip().split(" "))
-                    gdClasses[currentClass] = GDClass(currentClass, params, platforms)
+                    if isValidForAndroid: platforms.add("android")
+                    for platform in platforms:
+                        if classesFoundByPlatforms.get(platform) == None: print(f"  Platform {platform} not found in 'classesFoundByPlatforms'")
+                        classesFoundByPlatforms[platform] += 1
+                    initFunctions[currentClass] = CPPFunction(currentClass, params, platforms)
             else:
-                if not gdClasses.get(currentClass) and currentClass != "":
+                isValidForAndroid = False
+                if not initFunctions.get(currentClass) and currentClass != "":
                     unavailableClasses += 1
                     #print(f"    {currentClass} is not avalaible on any platforms")
+                
+                _class: str
+                if "link(android)" in "".join([match.group(), match.group(1)]):
+                    isValidForAndroid = True
+                    _class = match.group().replace("class ", "").split("\n")[1]
+                else:
+                    _class = match.group().replace("class ", "")
                     
-                _class = match.group().replace("class ", "")
                 if any(x in _class.lower() for x in toIgnore) and toIgnore != ['']:
                     print(f"    Ignoring class {_class}")
                     ignoreNextInitFunc = True
                     continue
                 currentClass = f"{_class}"
     
-    print(f"Found {len(gdClasses)} classes with {unavailableClasses} unavailable classes (= they don't have bindings) !")
+    print(f"Found {len(initFunctions)} classes with {unavailableClasses} unavailable classes (= they don't have bindings for an 'init' function) !")
     print("Now creating files...")
     
     # classes.hpp
@@ -217,11 +240,18 @@ constexpr std::vector<std::string> getClasses() {
     std::vector<std::string> classes;
 """
 
-        text += f"    classes.reserve({len(gdClasses)});\n\n"
-        for classInst in gdClasses.values():
-            if classInst.isBindingAvalaible():
-                text += f"    classes.push_back(\"{classInst.name}\");\n"
-        text += "    return classes;\n}"
+        for func in initFunctions.values():
+            if func.isBindingAvalaible():
+                ifDef = func.createIfdefs()
+                if ifDef:
+                    text += f"""\t{ifDef}
+\tclasses.push_back(\"{func.name}\");
+\t#endif
+"""
+                else:
+                    text += f"\tclasses.push_back(\"{func.name}\");\n"
+        text += "\n\tclasses.shrink_to_fit();\n"
+        text += "\treturn classes;\n}"
         f.write(text)
     
         # hooks.cpp
@@ -231,6 +261,7 @@ constexpr std::vector<std::string> getClasses() {
             text = """// Generated using 'generate.py'
 // Can't wait for someone to destroy `PlayerObject`'s as their first destroyed init :3
 #include <Geode/Geode.hpp>
+#include <Geode/ui/GeodeUI.hpp>
 #include "../ScrewYou2Manager.hpp"
 
 using namespace geode::prelude;
@@ -245,6 +276,29 @@ bool getReturnValue() {
         default: return true;
     }
 }
+
+#define SCREWYOU2_MENULAYER_CUSTOM_INIT(className, ...) { \\
+        log::info("Class {} has been killed: ", CLASS_NAME, ScrewYou2Manager::get()->isKilled(CLASS_NAME)); \\
+        if (ScrewYou2Manager::get()->isKilled(CLASS_NAME) && Mod::get()->getSettingValue<bool>("enabled")) return getReturnValue(); \\
+        if (!##className::init(__VA_ARGS__)) return false; \\
+        if (Mod::get()->getSavedValue<bool>("first-time-loading", true)) { \\
+            Mod::get()->setSavedValue<bool>("first-time-loading", false); \\
+            auto alert = createQuickPopup( \\
+                "Before you continue", \\
+                "This mod CAN and WILL make your gd crash. Be sure to read this mod's description before continuing", \\
+                "Read", "Dismiss", \\
+                [](FLAlertLayer* alert, bool btn2) { \\
+                    if (!btn2) { \\
+                        openInfoPopup(Mod::get()); \\
+                    } \\
+                } \\
+            ); \\
+            alert->m_scene = this; \\
+            alert->show(); \\
+        } \\
+        return true; \\
+    } \\
+};
 
 #define SCREWYOU2_HOOK(className, ...) \\
 class $modify(Screwd##className, ##className) { \\
@@ -265,12 +319,23 @@ class $modify(Screwd##className, ##className) { \\
 
 """
 
-            for className, classInst in gdClasses.items():
-                text += classInst.build()
+            for className, func in initFunctions.items():
+                init_macro = MENULAYER_CUSTOM_INIT_MACRO if className == "MenuLayer" else INIT_MACRO
+                text += func.build(init_macro=init_macro)
             f.write(text)
             
     time2 = time.time()
     
+    print("-" * 100)
     print("Done !")
     print(f"Finished in {time2 - time1} seconds !")
+    print("Stats:")
+    print(f"  Found {len(initFunctions)} init functions/valid classes")
+    print(f"  Found {unavailableClasses} unavailable classes (They didn't have a 'init()' function)")
+    print("  Platforms:")
+    print(f"    Windows: {classesFoundByPlatforms["win"]}")
+    print(f"    m1 (arm mac): {classesFoundByPlatforms["m1"]}")
+    print(f"    Android: {classesFoundByPlatforms["android"]}")
+    print(f"    Imac: {classesFoundByPlatforms["imac"]}")
+    print(f"    Ios: {classesFoundByPlatforms["ios"]}")
                 
