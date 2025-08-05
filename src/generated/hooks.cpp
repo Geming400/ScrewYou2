@@ -1593,9 +1593,12 @@ SCREWYOU2_HOOK(SetupShakePopup, EffectGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupShakePopup, p0, p1)
 #endif
 
+
+#if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
 #include <Geode/modify/SetupSmartBlockLayer.hpp>
 SCREWYOU2_HOOK(SetupSmartBlockLayer, SmartGameObject* p0, cocos2d::CCArray* p1)
 SCREWYOU2_HOOK_INIT(SetupSmartBlockLayer, p0, p1)
+#endif
 
 
 #if defined GEODE_IS_WINDOWS || defined GEODE_IS_ANDROID || defined GEODE_IS_MACOS
