@@ -61,29 +61,34 @@ class GDClass:
                 ret += DEFINED_TEXT + mac + " || "
             if ios:
                 ret += DEFINED_TEXT + ios + " || "
-            return "#ifdef " + ret.removesuffix(" || ")
+            return "#if " + ret.removesuffix(" || ")
         return ""
     
     def build(self, hook_macro: str = HOOK_MACRO, init_macro: str = INIT_MACRO):
         ifDefs = self.createIfdefs()
 
-        if self.params == [] or self.params == ['']:
+        if self.params == "":
             initMacroCall = f"{init_macro}({self.name})"
         else:
             initMacroCall = f"{init_macro}({self.name}, {removeTypes(self.params)})"
         
+        includeCall = f"#include <Geode/modify/{self.name}.hpp>"
+        hookCall = f"""{hook_macro}({self.name}, {self.params})
+{initMacroCall}"""
+        
         ret: str = ""
         if ifDefs:
             ret = f"""
+{includeCall}
 {ifDefs}
-{hook_macro}({self.name}, {self.params})
-{initMacroCall}
+{hookCall}
 #endif
+
 """
         else:
-            ret = f"""
-{hook_macro}({self.name}, {self.params})
-{initMacroCall}
+            ret = f"""{includeCall}
+{hookCall}
+
 """
         
         return ret
@@ -143,7 +148,7 @@ def removeTypes(string: str):
 
 if __name__ == "__main__":
     gdClasses: dict[str, GDClass] = {}
-    unavalaibleClasses: int = 0
+    unavailableClasses: int = 0
     
     args = parser.parse_args()
     
@@ -187,7 +192,7 @@ if __name__ == "__main__":
                     gdClasses[currentClass] = GDClass(currentClass, params, platforms)
             else:
                 if not gdClasses.get(currentClass) and currentClass != "":
-                    unavalaibleClasses += 1
+                    unavailableClasses += 1
                     #print(f"    {currentClass} is not avalaible on any platforms")
                     
                 _class = match.group().replace("class ", "")
@@ -197,7 +202,7 @@ if __name__ == "__main__":
                     continue
                 currentClass = f"{_class}"
     
-    print(f"Found {len(gdClasses)} classes with {unavalaibleClasses} unavalaible classes !")
+    print(f"Found {len(gdClasses)} classes with {unavailableClasses} unavailable classes (= they don't have bindings) !")
     print("Now creating files...")
     
     # classes.hpp
