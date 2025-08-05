@@ -1,0 +1,46 @@
+{
+	"geode": "4.7.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "geming400.screwyou2",
+	"name": "Screw You 2",
+	"version": "v1.0.0",
+	"developer": "Geming400",
+	"description": "Screw you but it screws you even more !",
+	"settings": {
+		"behavior-title": {
+			"type": "title"
+		},
+		"enabled": {
+			"name": "Enabled",
+			"description": "If the mod is enabled or not",
+			"type": "bool",
+			"default": true
+		},
+		"return-value": {
+			"name": "Return value",
+			"description": "The return value in the hooked initizalize's function. If this setting's value is `false`, there is a very high chance that your game will crash. Else, the node just won't initizalize",
+			"type": "string",
+			"default": "true",
+			"one-of": ["false", "true"],
+			"enable-if": "enabled"
+		},
+		"intensity": {
+			"name": "Intensity",
+			"description": "How many classes will be 'killed' on death",
+			"type": "int",
+			"default": 1,
+			"enable-if": "enabled",
+			"control": {
+				"slider": true,
+				"input": true
+			},
+			"min": 1,
+			"max": 50
+		}
+	}
+}
