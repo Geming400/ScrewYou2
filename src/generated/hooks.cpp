@@ -8,23 +8,8 @@ using namespace geode::prelude;
 
 // Cursed macros but whatever, this isn't supposed to be the most readable thing after all
 
-/*
-bool getReturnValue() {
-    auto returnVal = Mod::get()->getSettingValue<std::string>("return-value");
-    switch (hash(returnVal.c_str())) {
-        case hash("true"): return true;
-        case hash("false"): return false;
-        default: return true;
-    }
-}
-*/
-
-constexpr bool getReturnValue() {
-    return true;
-}
-
 #define SCREWYOU2_MENULAYER_CUSTOM_INIT(className, ...) { \
-        if (ScrewYou2Manager::get()->isKilled(CLASS_NAME) && Mod::get()->getSettingValue<bool>("enabled")) return getReturnValue(); \
+        if (ScrewYou2Manager::get()->isKilled(CLASS_NAME) && Mod::get()->getSettingValue<bool>("enabled")) return true; \
         if (!className::init(__VA_ARGS__)) return false; \
         if (Mod::get()->getSavedValue<bool>("first-time-loading", true)) { \
             log::info("Showing popup"); \
@@ -46,7 +31,7 @@ class $modify(Screwd##className, className) { \
     bool init(__VA_ARGS__) // `SCREWYOU2_HOOK_INIT()` macro goes here
 
 #define SCREWYOU2_HOOK_INIT(className, ...) { \
-        if (ScrewYou2Manager::get()->isKilled(CLASS_NAME) && Mod::get()->getSettingValue<bool>("enabled")) return getReturnValue();\
+        if (ScrewYou2Manager::get()->isKilled(CLASS_NAME) && Mod::get()->getSettingValue<bool>("enabled")) return true;\
         if (!className::init(__VA_ARGS__)) return false; \
         return true; \
     } \
