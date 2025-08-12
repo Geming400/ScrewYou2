@@ -161,7 +161,7 @@ if __name__ == "__main__":
         "m1": 0
     }
     
-    args = parser.parse_args([r"D:\Geode\bindings\bindings\2.2074\GeometryDash.bro"])
+    args = parser.parse_args()
     
     toIgnore: list[str] = args.ignore.lower().split(";")
     
